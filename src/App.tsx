@@ -1,8 +1,8 @@
 import {  Grid, GridItem, Theme } from "@chakra-ui/react";
 import Navbar from "./comp/Navbar";
+import ColorModeSwitcher from "./comp/ColorModeSwitch";
 function App() {
   return (
-
 <Grid 
 templateAreas={{
   base: `"nav" "main"`,
@@ -10,8 +10,8 @@ templateAreas={{
 }}
 >
   <GridItem area={"nav"}> <Navbar/> </GridItem>
-  <GridItem display={{base:"none", lg:"block"}} area={"aside"} bg="pink">Aside</GridItem>
-  <GridItem area={"main"} bg="dodgerblue"> Main</GridItem>
+  <GridItem display={{base:"none", lg:"block"}} area={"aside"}>Aside</GridItem>
+  <GridItem area={"main"}> Main</GridItem>
 </Grid>
   );
 }
