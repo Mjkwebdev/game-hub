@@ -3,16 +3,17 @@ import React from "react";
 import { Game } from "src/hook/hook";
 import PlatformIconList from "./PlatformIconList";
 import CriticScore from "./CriticScore";
+import getCroppedImageUrl from "src/services/image-url";
 interface Props {
   game: Game;
 }
 const GameCard = ({ game }: Props) => {
   return (
     <Card.Root borderRadius={10} overflow="hidden">
-      <Image src={game.background_image}></Image>
+      <Image src={getCroppedImageUrl(game.background_image)}></Image>
       <Card.Body>
         <Heading fontSize={"2xl"}>{game.name}</Heading>
-        <HStack justifyContent={"space-between"}>
+        <HStack justifyContent={"spa"}>
           <PlatformIconList
             platforms={game.parent_platforms.map((p) => p.platform)}
           />
