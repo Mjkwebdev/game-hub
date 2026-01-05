@@ -1,19 +1,26 @@
-import {  Grid, GridItem, Theme } from "@chakra-ui/react";
+import { Grid, GridItem, Theme } from "@chakra-ui/react";
 import Navbar from "./comp/Navbar";
-import ColorModeSwitcher from "./comp/ColorModeSwitch";
 import GameGrid from "./comp/GameGrid";
+import "./index.css";
 function App() {
   return (
-<Grid 
-templateAreas={{
-  base: `"nav" "main"`,
-  lg: `"nav nav" "aside main"`
-}}
->
-  <GridItem area={"nav"}> <Navbar/> </GridItem>
-  <GridItem display={{base:"none", lg:"block"}} area={"aside"}>Aside</GridItem>
-  <GridItem area={"main"}><GameGrid/> </GridItem>
-</Grid>
+    <Grid
+      templateAreas={{
+        base: `"nav" "main"`,
+        lg: `"nav nav" "aside main"`,
+      }}
+    >
+      <GridItem area={"nav"}>
+        {" "}
+        <Navbar />{" "}
+      </GridItem>
+      <GridItem display={{ base: "none", lg: "block" }} area={"aside"}>
+        Aside
+      </GridItem>
+      <GridItem area={"main"}>
+        <GameGrid />{" "}
+      </GridItem>
+    </Grid>
   );
 }
 
