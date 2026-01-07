@@ -12,6 +12,7 @@ import { BsGlobe } from "react-icons/bs";
 import { Platform } from "src/hook/hook";
 import { Icon } from "@chakra-ui/react";
 import { IconType } from "react-icons";
+import { Fragment } from "react/jsx-runtime";
 
 interface props {
   platforms: Platform[];
@@ -32,15 +33,13 @@ const PlatformIconList = ({ platforms }: props) => {
   return (
     <div>
       {platforms.map((platform) => (
-        <>
-          <Icon
-            spaceX={10}
-            fontSize="20px"
-            key={platform.id}
-            as={iconMap[platform.slug]}
-            color={"grey"}
-          />
-        </>
+        <Icon
+          key={platform.id}
+          marginRight={1}
+          fontSize="20px"
+          as={iconMap[platform.slug] || BsGlobe}
+          color={"grey"}
+        />
       ))}
     </div>
   );
