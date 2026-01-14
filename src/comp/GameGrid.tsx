@@ -1,4 +1,4 @@
-import { SimpleGrid, Text } from "@chakra-ui/react";
+import { Flex, SimpleGrid, Text } from "@chakra-ui/react";
 import useGames, { Platform } from "src/hook/hook";
 import GameCard from "./GameCard";
 import GameCardSkeleton from "./GameCardSkeleton";
@@ -6,6 +6,7 @@ import GameCardContainer from "./GameCardContainer";
 import { Genre } from "src/hook/useGenre";
 import PlatformSelector from "./PlatformSelector";
 import { GameQuery } from "src/App";
+import { Grid } from "lucide-react";
 interface Props {
   gameQuery: GameQuery;
 }
@@ -18,7 +19,7 @@ const GameGrid = ({ gameQuery }: Props) => {
       <div>
         {error && <Text> {error}</Text>}{" "}
         <SimpleGrid
-          columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}
+          columns={{ sm: 2, md: 2, lg: 3, xl: 4 }}
           padding="13px"
           spaceX={5}
           spaceY={5}
