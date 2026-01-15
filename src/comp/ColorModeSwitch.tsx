@@ -6,7 +6,7 @@ import { useColorMode } from "src/components/ui/color-mode";
 const ColorModeSwitch = () => {
   const { colorMode, toggleColorMode } = useColorMode();
   return (
-    <HStack>
+    <HStack textWrap={"nowrap"}>
       <ClientOnly fallback={<Skeleton boxSize="8" />}>
         <IconButton onClick={toggleColorMode} variant={"outline"} size="sm">
           {colorMode === "light" ? <LuSun /> : <LuMoon />}
